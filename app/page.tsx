@@ -1,15 +1,19 @@
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
-import Skills from '@/components/sections/Skills';
+import SkillsEnhanced from '@/components/sections/SkillsEnhanced';
 import Projects from '@/components/sections/Projects';
+import CaseStudies from '@/components/sections/CaseStudies';
 import Certifications from '@/components/sections/Certifications';
 import Experience from '@/components/sections/Experience';
 import Education from '@/components/sections/Education';
 import Achievements from '@/components/sections/Achievements';
+import Testimonials from '@/components/sections/Testimonials';
 import GitHubActivity from '@/components/sections/GitHubActivity';
 import Blog from '@/components/sections/Blog';
 import Timeline from '@/components/sections/Timeline';
 import Stats from '@/components/sections/Stats';
+import Dashboards from '@/components/sections/Dashboards';
+import Newsletter from '@/components/sections/Newsletter';
 import Contact from '@/components/sections/Contact';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -35,16 +39,20 @@ export default function Home() {
 
       <Hero />
       <About />
-      <Skills />
+      <SkillsEnhanced />
       <Projects />
+      <CaseStudies />
       <Certifications />
       <Experience />
       <Education />
       <Achievements />
+      <Testimonials />
       <GitHubActivity />
       <Stats />
+      <Dashboards />
       <Timeline />
       <Blog />
+      <Newsletter />
       <Contact />
 
         <Footer />

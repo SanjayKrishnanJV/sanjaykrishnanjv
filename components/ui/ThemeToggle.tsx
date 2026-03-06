@@ -1,49 +1,25 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useTheme } from '@/components/theme/ThemeProvider';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const { theme, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = stored || (prefersDark ? 'dark' : 'light');
-    setTheme(initialTheme);
-
-    if (initialTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
-    console.log('Theme toggled to:', newTheme);
-    console.log('HTML classes:', document.documentElement.className);
-  };
-
   if (!mounted) {
-    return <div className="w-10 h-10" />;
+    return <div className="fixed top-4 right-4 z-[60] w-[52px] h-[52px]" />;
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-[60] p-3 glass rounded-full hover:bg-white/20 transition-all duration-300 group"
+      className="fixed top-4 right-4 z-[60] p-3 glass rounded-full hover:bg-white/20 transition-all duration-300 group shadow-lg"
       aria-label="Toggle theme"
       type="button"
     >

@@ -3,54 +3,54 @@
 @tailwind utilities;
 
 /* Theme styles - must be outside @layer for proper specificity */
-html.dark body {
+html[data-theme="dark"] body {
   background-color: #18181b !important;
   color: #fafafa !important;
 }
 
-html:not(.dark) body {
+html[data-theme="light"] body {
   background: linear-gradient(to bottom right, #f9fafb, #eff6ff) !important;
   color: #111827 !important;
 }
 
 /* Light mode overrides for dark color classes */
-html:not(.dark) .text-dark-900 {
+html[data-theme="light"] .text-dark-900 {
   color: #111827 !important;
 }
 
-html:not(.dark) .text-dark-800 {
+html[data-theme="light"] .text-dark-800 {
   color: #1f2937 !important;
 }
 
-html:not(.dark) .text-dark-700 {
+html[data-theme="light"] .text-dark-700 {
   color: #374151 !important;
 }
 
-html:not(.dark) .text-dark-600 {
+html[data-theme="light"] .text-dark-600 {
   color: #4b5563 !important;
 }
 
-html:not(.dark) .text-dark-500 {
+html[data-theme="light"] .text-dark-500 {
   color: #6b7280 !important;
 }
 
-html:not(.dark) .bg-dark-50 {
+html[data-theme="light"] .bg-dark-50 {
   background-color: #f9fafb !important;
 }
 
-html:not(.dark) .bg-dark-100 {
+html[data-theme="light"] .bg-dark-100 {
   background-color: #f3f4f6 !important;
 }
 
-html:not(.dark) .bg-dark-200 {
+html[data-theme="light"] .bg-dark-200 {
   background-color: #e5e7eb !important;
 }
 
-html:not(.dark) .border-dark-200 {
+html[data-theme="light"] .border-dark-200 {
   border-color: #e5e7eb !important;
 }
 
-html:not(.dark) .bg-dark-100\/50 {
+html[data-theme="light"] .bg-dark-100\/50 {
   background-color: rgba(243, 244, 246, 0.5) !important;
 }
 
@@ -90,12 +90,12 @@ html:not(.dark) .bg-dark-100\/50 {
 }
 
 /* Light mode component overrides */
-html:not(.dark) .glass {
+html[data-theme="light"] .glass {
   background-color: rgba(255, 255, 255, 0.7) !important;
   border-color: rgba(229, 231, 235, 0.5) !important;
 }
 
-html:not(.dark) .glass-hover:hover {
+html[data-theme="light"] .glass-hover:hover {
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
@@ -262,4 +262,68 @@ html {
 /* Focus visible */
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-primary-500;
+}
+
+/* Prose styles for blog content */
+.prose {
+  @apply text-dark-900;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-dark-900 font-bold;
+}
+
+.prose a {
+  @apply text-primary-400 hover:text-primary-300 no-underline;
+}
+
+.prose code {
+  @apply text-primary-400 bg-white/10 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-dark-100 rounded-lg p-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary-400 pl-4 italic text-dark-700;
+}
+
+.prose img {
+  @apply rounded-lg;
+}
+
+.prose table {
+  @apply w-full border-collapse;
+}
+
+.prose th,
+.prose td {
+  @apply border border-white/10 px-4 py-2;
+}
+
+.prose th {
+  @apply bg-white/5 font-semibold;
+}
+
+.prose ul,
+.prose ol {
+  @apply text-dark-800;
+}
+
+.prose strong {
+  @apply text-dark-900 font-bold;
+}
+
+.prose hr {
+  @apply border-white/10;
 }

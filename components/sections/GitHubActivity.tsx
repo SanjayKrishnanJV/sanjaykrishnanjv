@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Github, Star, GitFork, Users, BookOpen } from 'lucide-react';
 import { useGitHubData } from '@/app/data-provider';
 import { formatNumber } from '@/lib/utils';
+import ContributionCalendar from '@/components/github/ContributionCalendar';
 
 interface StatCard {
   label: string;
@@ -104,6 +105,11 @@ export default function GitHubActivity() {
                     </motion.div>
                   );
                 })}
+              </div>
+
+              {/* Contribution Calendar */}
+              <div className="mb-16">
+                <ContributionCalendar username={profile.username || 'SanjayKrishnanJV'} />
               </div>
 
               {/* Language Chart */}

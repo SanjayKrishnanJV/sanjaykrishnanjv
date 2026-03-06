@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -9,8 +10,7 @@ const navItems = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Certifications', href: '#certifications' },
-  { name: 'Experience', href: '#experience' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -38,20 +38,30 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="text-2xl font-bold gradient-text">
-            SJV
+            SK
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium"
-              >
-                {item.name}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center gap-4">
+            {navItems.map((item) =>
+              item.href.startsWith('#') ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -59,6 +69,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
             aria-label="Toggle menu"
+            type="button"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -68,16 +79,27 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 glass rounded-lg p-4 animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium py-2"
-                >
-                  {item.name}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium py-2"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-dark-800 hover:text-primary-400 transition-colors duration-200 font-medium py-2"
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           </div>
         )}

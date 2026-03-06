@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, Globe, ExternalLink, MessageCircle } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
+import VisitorCounter from '@/components/analytics/VisitorCounter';
 
 export default function Footer() {
   const data = usePersonalData();
@@ -87,6 +88,11 @@ export default function Footer() {
               })}
             </div>
           </div>
+        </div>
+
+        {/* Visitor Counter */}
+        <div className="border-t border-white/10 mt-8 pt-8">
+          <VisitorCounter />
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-dark-700">

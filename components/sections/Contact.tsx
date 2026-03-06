@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Linkedin, Github, Send, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Send, MessageCircle, Paperclip, X, Loader2 } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
 import { useState } from 'react';
 
@@ -16,43 +16,58 @@ export default function Contact() {
   const data = usePersonalData();
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [attachments, setAttachments] = useState<File[]>([]);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    const maxSize = 5 * 1024 * 1024; // 5MB
+    const validFiles = files.filter(file => {
+      if (file.size > maxSize) {
+        setMessage(`File ${file.name} is too large. Maximum size is 5MB`);
+        setFormState('error');
+        setTimeout(() => setFormState('idle'), 3000);
+        return false;
+      }
+      return true;
+    });
+    setAttachments(prev => [...prev, ...validFiles].slice(0, 5)); // Max 5 files
+  };
+
+  const removeAttachment = (index: number) => {
+    setAttachments(prev => prev.filter((_, i) => i !== index));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('loading');
+    setErrors({});
 
     const formData = new FormData(e.currentTarget);
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+
+    // Add attachments to form data
+    attachments.forEach((file, index) => {
+      formData.append(`attachment_${index}`, file);
+    });
 
     try {
-      // If Formspree is configured, use it
-      if (formspreeId) {
-        const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
 
-        if (response.ok) {
-          setFormState('success');
-          setMessage('Thanks for reaching out! I\'ll get back to you soon.');
-          (e.target as HTMLFormElement).reset();
-          setTimeout(() => setFormState('idle'), 5000);
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } else {
-        // Fallback to mailto
-        const subject = formData.get('subject');
-        const body = formData.get('body');
-        const email = formData.get('email');
-        const name = formData.get('name');
-        window.location.href = `mailto:${data.email}?subject=${encodeURIComponent(String(subject))}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${body}`)}`;
+      const result = await response.json();
+
+      if (result.success) {
         setFormState('success');
-        setMessage('Opening your email client...');
-        setTimeout(() => setFormState('idle'), 3000);
+        setMessage(result.message);
+        (e.target as HTMLFormElement).reset();
+        setAttachments([]);
+        setTimeout(() => setFormState('idle'), 5000);
+      } else {
+        setFormState('error');
+        setMessage(result.message);
+        setTimeout(() => setFormState('idle'), 5000);
       }
     } catch (error) {
       setFormState('error');
@@ -226,18 +241,134 @@ export default function Contact() {
                   />
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                      Phone (Optional)
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      className="input"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium mb-2">
+                      Company (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="input"
+                      placeholder="Your company"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="projectType" className="block text-sm font-medium mb-2">
+                      Project Type (Optional)
+                    </label>
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      className="input"
+                    >
+                      <option value="">Select type</option>
+                      <option value="web-development">Web Development</option>
+                      <option value="mobile-app">Mobile App</option>
+                      <option value="cloud-architecture">Cloud Architecture</option>
+                      <option value="consulting">Consulting</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="budget" className="block text-sm font-medium mb-2">
+                      Budget (Optional)
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      className="input"
+                    >
+                      <option value="">Select budget</option>
+                      <option value="under-5k">Under $5,000</option>
+                      <option value="5k-10k">$5,000 - $10,000</option>
+                      <option value="10k-25k">$10,000 - $25,000</option>
+                      <option value="25k-50k">$25,000 - $50,000</option>
+                      <option value="50k-plus">$50,000+</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Message
                   </label>
                   <textarea
                     id="message"
-                    name="body"
+                    name="message"
                     rows={5}
                     className="input resize-none"
-                    placeholder="Your message..."
+                    placeholder="Tell me about your project..."
                     required
                   />
+                </div>
+
+                {/* File Upload */}
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Attachments (Optional)
+                  </label>
+                  <div className="flex items-center gap-4">
+                    <label className="btn-secondary cursor-pointer">
+                      <Paperclip className="w-5 h-5" />
+                      <span>Add Files</span>
+                      <input
+                        type="file"
+                        multiple
+                        accept="image/*,.pdf,.doc,.docx"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                    </label>
+                    <span className="text-xs text-dark-600">Max 5 files, 5MB each</span>
+                  </div>
+
+                  {attachments.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      {attachments.map((file, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-3 glass rounded-lg"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Paperclip className="w-4 h-4 text-primary-400" />
+                            <div>
+                              <p className="text-sm font-medium">{file.name}</p>
+                              <p className="text-xs text-dark-600">
+                                {(file.size / 1024).toFixed(2)} KB
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeAttachment(index)}
+                            className="p-1 hover:bg-red-500/20 rounded transition-colors"
+                            aria-label={`Remove ${file.name}`}
+                          >
+                            <X className="w-4 h-4 text-red-400" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <button
@@ -245,8 +376,17 @@ export default function Contact() {
                   className="btn-primary w-full"
                   disabled={formState === 'loading'}
                 >
-                  <Send className="w-5 h-5" />
-                  {formState === 'loading' ? 'Sending...' : 'Send Message'}
+                  {formState === 'loading' ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>

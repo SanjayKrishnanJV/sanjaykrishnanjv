@@ -4,6 +4,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -116,17 +117,17 @@ export default function RootLayout({
               (function() {
                 const theme = localStorage.getItem('theme');
                 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const shouldBeDark = theme === 'dark' || (!theme && prefersDark);
-                if (shouldBeDark) {
-                  document.documentElement.classList.add('dark');
-                }
+                const initialTheme = theme || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', initialTheme);
               })();
             `,
           }}
         />
       </head>
       <body className={cn(inter.className, 'antialiased')} suppressHydrationWarning>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,0 +1,155 @@
+---
+title: "Building Scalable Microservices with Azure and .NET"
+description: "Learn how to design and deploy scalable microservices using Azure Service Fabric, Docker, and .NET Core with best practices for cloud-native applications."
+date: "2024-03-15"
+author: "Sanjay Krishnan JV"
+tags: ["Azure", "Microservices", ".NET", "Docker", "Cloud Architecture"]
+coverImage: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&h=600&fit=crop"
+---
+
+# Building Scalable Microservices with Azure and .NET
+
+Microservices architecture has become the go-to pattern for building modern, scalable applications. In this article, I'll share my experience building microservices on Azure using .NET Core and Docker.
+
+## Why Microservices?
+
+Microservices offer several advantages over monolithic architectures:
+
+- **Independent Deployment**: Each service can be deployed independently
+- **Technology Diversity**: Different services can use different tech stacks
+- **Scalability**: Scale individual services based on demand
+- **Fault Isolation**: Failures in one service don't bring down the entire system
+
+## Key Components
+
+### 1. Azure Service Fabric
+
+Azure Service Fabric is a distributed systems platform that makes it easy to build and manage scalable microservices.
+
+```csharp
+public class MyStatelessService : StatelessService
+{
+    protected override async Task RunAsync(CancellationToken cancellationToken)
+    {
+        while (!cancellationToken.IsCancellationRequested)
+        {
+            // Service logic here
+            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
+        }
+    }
+}
+```
+
+### 2. Docker Containerization
+
+Containerizing your services ensures consistency across environments:
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["MyService/MyService.csproj", "MyService/"]
+RUN dotnet restore "MyService/MyService.csproj"
+COPY . .
+WORKDIR "/src/MyService"
+RUN dotnet build "MyService.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "MyService.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "MyService.dll"]
+```
+
+### 3. API Gateway Pattern
+
+Implement an API Gateway to handle routing, authentication, and cross-cutting concerns:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddOcelot()
+           .AddAzureServiceFabric();
+
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+           .AddJwtBearer(options =>
+           {
+               options.Authority = Configuration["Auth:Authority"];
+               options.Audience = Configuration["Auth:Audience"];
+           });
+}
+```
+
+## Best Practices
+
+### Service Communication
+
+Use asynchronous messaging for inter-service communication:
+
+```csharp
+public class OrderService
+{
+    private readonly IServiceBusClient _serviceBus;
+
+    public async Task ProcessOrderAsync(Order order)
+    {
+        // Process order
+        await _serviceBus.PublishAsync(new OrderCreatedEvent
+        {
+            OrderId = order.Id,
+            CustomerId = order.CustomerId,
+            Timestamp = DateTime.UtcNow
+        });
+    }
+}
+```
+
+### Health Checks
+
+Implement health checks for monitoring:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddHealthChecks()
+           .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+           .AddAzureServiceBusQueue(Configuration["ServiceBus:ConnectionString"])
+           .AddApplicationInsightsPublisher();
+}
+```
+
+## Monitoring and Observability
+
+Use Application Insights for comprehensive monitoring:
+
+```csharp
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseApplicationInsights();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers();
+        endpoints.MapHealthChecks("/health");
+    });
+}
+```
+
+## Conclusion
+
+Building scalable microservices requires careful planning and the right tools. Azure provides a robust platform for deploying and managing microservices at scale. By following these patterns and best practices, you can build resilient, scalable applications that meet modern business demands.
+
+### Key Takeaways
+
+1. Start with a well-defined service boundary
+2. Use containers for consistency
+3. Implement proper monitoring from day one
+4. Design for failure with circuit breakers and retries
+5. Use asynchronous communication where possible
+
+Ready to build your first microservice? Start small, iterate, and scale as needed!

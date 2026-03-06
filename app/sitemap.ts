@@ -1,7 +1,27 @@
 import { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/blog';
+import { getAllCaseStudies } from '@/lib/case-studies';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.sanjaykrishnanjv.com';
+
+  // Get all blog posts for dynamic sitemap entries
+  const posts = getAllPosts();
+  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  // Get all case studies for dynamic sitemap entries
+  const caseStudies = getAllCaseStudies();
+  const caseStudyEntries: MetadataRoute.Sitemap = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -18,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}#projects`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -40,5 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    ...blogEntries,
+    ...caseStudyEntries,
   ];
 }
