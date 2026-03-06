@@ -1,0 +1,85 @@
+name: Sync Portfolio Data
+
+on:
+  # Run weekly on Sunday at midnight
+  schedule:
+    - cron: '0 0 * * 0'
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+  # Run when sync scripts are modified
+  push:
+    paths:
+      - 'scripts/sync-*.ts'
+      - '.github/workflows/sync-portfolio-data.yml'
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync GitHub data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm run sync-github
+        continue-on-error: true
+
+      - name: Sync LinkedIn profile
+        env:
+          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
+        run: npm run sync-linkedin
+        continue-on-error: true
+
+      - name: Sync LinkedIn posts
+        env:
+          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
+        run: npm run sync-linkedin-posts
+        continue-on-error: true
+
+      - name: Sync certifications
+        run: npm run sync-certifications
+        continue-on-error: true
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code data/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/
+          git commit -m "chore: auto-sync portfolio data [skip ci]"
+          git push
+
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## Portfolio Data Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Sync completed successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Updated Files:" >> $GITHUB_STEP_SUMMARY
+          git status --short data/ >> $GITHUB_STEP_SUMMARY || echo "No changes detected" >> $GITHUB_STEP_SUMMARY
