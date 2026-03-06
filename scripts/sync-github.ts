@@ -80,13 +80,36 @@ async function getProfile(): Promise<GitHubProfile> {
 
 async function getRepositories(): Promise<GitHubRepo[]> {
   console.log('📦 Fetching repositories...');
-  const repos = await fetchGitHub(`/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
+  let allRepos: GitHubRepo[] = [];
+  let page = 1;
+  let hasMore = true;
 
-  // Filter out forks and sort by stars
-  const ownRepos = repos.filter((repo: any) => !repo.fork);
+  // Fetch all repositories with pagination
+  while (hasMore) {
+    const repos = await fetchGitHub(`/users/${GITHUB_USERNAME}/repos?per_page=100&page=${page}&sort=updated`);
 
+    if (repos.length === 0) {
+      hasMore = false;
+    } else {
+      allRepos = allRepos.concat(repos);
+      page++;
+
+      // If we got less than 100, we've reached the end
+      if (repos.length < 100) {
+        hasMore = false;
+      }
+    }
+  }
+
+  console.log(`   Found ${allRepos.length} total repositories`);
+
+  // Filter out forks
+  const ownRepos = allRepos.filter((repo: any) => !repo.fork);
+  console.log(`   Filtered to ${ownRepos.length} non-forked repositories`);
+
+  // Sort by updated date (most recent first) to show latest activity
   return ownRepos.sort((a: GitHubRepo, b: GitHubRepo) =>
-    b.stargazers_count - a.stargazers_count
+    new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
   );
 }
 
@@ -114,8 +137,17 @@ async function getLanguageStats(repos: GitHubRepo[]): Promise<LanguageStats> {
 
 async function getPinnedRepos(repos: GitHubRepo[]): Promise<GitHubRepo[]> {
   // Since GitHub doesn't provide a direct API for pinned repos,
-  // we'll return the top 6 repos by stars
-  return repos.slice(0, 6);
+  // we'll return the top 6 repos based on a combination of stars and recent activity
+  // The repos are already sorted by updated_at, so we'll get the most recently active ones
+
+  // Get top 12 most recently updated repos
+  const recentRepos = repos.slice(0, 12);
+
+  // Sort these by stars to get the most popular recent projects
+  const pinnedRepos = recentRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+
+  // Return top 6
+  return pinnedRepos.slice(0, 6);
 }
 
 async function getContributionStats(): Promise<{
