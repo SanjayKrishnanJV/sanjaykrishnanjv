@@ -45,11 +45,11 @@ export default function GitHubActivity() {
   ];
 
   const languages = stats.languages || {};
-  const topLanguages = Object.entries(languages)
-    .sort(([, a]: [string, number], [, b]: [string, number]) => (b as number) - (a as number))
+  const topLanguages = Object.entries(languages as Record<string, number>)
+    .sort(([, a], [, b]) => b - a)
     .slice(0, 5);
 
-  const total = topLanguages.reduce((sum: number, [, bytes]: [string, number]) => sum + (bytes as number), 0);
+  const total = topLanguages.reduce((sum, [, bytes]) => sum + bytes, 0);
 
   return (
     <section id="github-activity" className="section bg-dark-100/50">
@@ -120,7 +120,7 @@ export default function GitHubActivity() {
                   </h3>
 
                   <div className="space-y-6">
-                    {topLanguages.map(([language, bytes]: any, index) => {
+                    {topLanguages.map(([language, bytes], index) => {
                       const percentage = ((bytes / total) * 100).toFixed(1);
                       const colors = [
                         'bg-blue-500',
