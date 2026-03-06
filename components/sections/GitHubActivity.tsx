@@ -5,12 +5,19 @@ import { Github, Star, GitFork, Users, BookOpen } from 'lucide-react';
 import { useGitHubData } from '@/app/data-provider';
 import { formatNumber } from '@/lib/utils';
 
+interface StatCard {
+  label: string;
+  value: number;
+  icon: any;
+  color: string;
+}
+
 export default function GitHubActivity() {
   const githubData = useGitHubData();
   const stats = githubData.stats || {};
   const profile = githubData.profile || {};
 
-  const statCards = [
+  const statCards: StatCard[] = [
     {
       label: 'Total Repositories',
       value: stats.totalRepos || 0,
@@ -39,10 +46,10 @@ export default function GitHubActivity() {
 
   const languages = stats.languages || {};
   const topLanguages = Object.entries(languages)
-    .sort(([, a]: any, [, b]: any) => b - a)
+    .sort(([, a]: [string, number], [, b]: [string, number]) => (b as number) - (a as number))
     .slice(0, 5);
 
-  const total = topLanguages.reduce((sum, [, bytes]: any) => sum + bytes, 0);
+  const total = topLanguages.reduce((sum: number, [, bytes]: [string, number]) => sum + (bytes as number), 0);
 
   return (
     <section id="github-activity" className="section bg-dark-100/50">
@@ -76,7 +83,7 @@ export default function GitHubActivity() {
             <>
               {/* Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                {statCards.map((stat, index) => {
+                {statCards.map((stat: StatCard, index: number) => {
                   const Icon = stat.icon;
                   return (
                     <motion.div

@@ -5,6 +5,26 @@ import { Briefcase, GraduationCap, Award, Calendar } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
 import { format } from 'date-fns';
 
+interface Experience {
+  company: string;
+  position: string;
+  location?: string;
+  startDate: string;
+  endDate: string | null;
+  current: boolean;
+  description?: string;
+  achievements?: string[];
+}
+
+interface Education {
+  institution: string;
+  degree: string;
+  field?: string;
+  startDate: string;
+  endDate: string;
+  grade?: string;
+}
+
 export default function Timeline() {
   const data = usePersonalData();
 
@@ -34,7 +54,7 @@ export default function Timeline() {
   };
 
   const timelineItems = [
-    ...data.experience.map(exp => ({
+    ...data.experience.map((exp: Experience) => ({
       type: 'work' as const,
       title: exp.position,
       organization: exp.company,
@@ -45,7 +65,7 @@ export default function Timeline() {
       description: exp.description,
       icon: Briefcase,
     })),
-    ...data.education.map(edu => ({
+    ...data.education.map((edu: Education) => ({
       type: 'education' as const,
       title: edu.degree,
       organization: edu.institution,

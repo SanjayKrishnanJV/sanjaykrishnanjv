@@ -5,6 +5,13 @@ import { Star, GitFork, Users, Code, Award, TrendingUp } from 'lucide-react';
 import { useGitHubData } from '@/app/data-provider';
 import { useEffect, useState } from 'react';
 
+interface Stat {
+  icon: any;
+  label: string;
+  value: number;
+  color: string;
+}
+
 export default function Stats() {
   const githubData = useGitHubData();
   const [mounted, setMounted] = useState(false);
@@ -15,7 +22,7 @@ export default function Stats() {
 
   if (!mounted || !githubData) return null;
 
-  const stats = [
+  const stats: Stat[] = [
     {
       icon: Code,
       label: 'Repositories',
@@ -68,7 +75,7 @@ export default function Stats() {
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {stats.map((stat, index) => {
+            {stats.map((stat: Stat, index: number) => {
               const Icon = stat.icon;
               return (
                 <motion.div
@@ -102,7 +109,7 @@ export default function Stats() {
             </h3>
 
             <div className="space-y-4">
-              {topLanguages.map(([language, bytes], index) => {
+              {topLanguages.map(([language, bytes]: [string, number], index: number) => {
                 const percentage = ((bytes as number) / totalBytes) * 100;
                 const colors = [
                   'from-blue-500 to-cyan-500',

@@ -5,6 +5,13 @@ import { Mail, MapPin, Linkedin, Github, Send, MessageCircle } from 'lucide-reac
 import { usePersonalData } from '@/app/data-provider';
 import { useState } from 'react';
 
+interface ContactInfo {
+  icon: any;
+  label: string;
+  value: string;
+  href: string | null;
+}
+
 export default function Contact() {
   const data = usePersonalData();
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -116,7 +123,7 @@ export default function Contact() {
               <h3 className="text-2xl font-bold mb-8">Contact Information</h3>
 
               <div className="space-y-6">
-                {contactInfo.map((item, index) => {
+                {contactInfo.map((item: ContactInfo, index: number) => {
                   const Icon = item.icon;
                   const content = (
                     <div className="flex items-start gap-4 p-4 glass rounded-xl hover:bg-white/10 transition-all duration-300 group">
