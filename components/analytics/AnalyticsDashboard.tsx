@@ -52,7 +52,7 @@ export default function AnalyticsDashboard() {
   }
 
   // Prepare data for charts
-  const pageViewsData = Object.entries(globalStats.pageViews).map(([route, count]) => ({
+  const pageViewsData = Object.entries(stats.pageViews || {}).map(([route, count]) => ({
     name: route === '/' ? 'Home' : route.replace('/', ''),
     views: count as number,
   }));
@@ -65,9 +65,9 @@ export default function AnalyticsDashboard() {
   ];
 
   const deviceData = [
-    { name: 'Desktop', value: Math.floor(globalStats.uniqueVisitors * 0.6) },
-    { name: 'Mobile', value: Math.floor(globalStats.uniqueVisitors * 0.3) },
-    { name: 'Tablet', value: Math.floor(globalStats.uniqueVisitors * 0.1) },
+    { name: 'Desktop', value: Math.floor(stats.uniqueVisitors * 0.6) },
+    { name: 'Mobile', value: Math.floor(stats.uniqueVisitors * 0.3) },
+    { name: 'Tablet', value: Math.floor(stats.uniqueVisitors * 0.1) },
   ];
 
   const COLORS = ['#667eea', '#764ba2', '#f093fb'];
@@ -84,7 +84,7 @@ export default function AnalyticsDashboard() {
     {
       icon: Eye,
       label: 'Unique Visitors',
-      value: globalStats.uniqueVisitors.toLocaleString(),
+      value: stats.uniqueVisitors.toLocaleString(),
       change: '+8%',
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/20',
@@ -92,7 +92,7 @@ export default function AnalyticsDashboard() {
     {
       icon: Activity,
       label: 'Page Views',
-      value: (Object.values(globalStats.pageViews) as number[]).reduce((a: number, b: number) => a + b, 0).toLocaleString(),
+      value: globalStats.totalPageViews.toLocaleString(),
       change: '+15%',
       color: 'text-green-400',
       bgColor: 'bg-green-500/20',
