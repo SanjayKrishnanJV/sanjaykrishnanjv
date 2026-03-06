@@ -9,13 +9,45 @@
     "email": "sanjay.krishnanjv@wellsky.com",
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 2,
+    "publicRepos": 4,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
     "createdAt": "2025-04-08T18:26:23Z"
   },
   "repositories": [
+    {
+      "name": "sanjaykrishnanjv",
+      "fullName": "SanjayKrishnanJV/sanjaykrishnanjv",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/sanjaykrishnanjv",
+      "homepage": "https://sanjaykrishnanjv.vercel.app",
+      "stars": 1,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-03-06T11:32:19Z",
+      "updatedAt": "2026-03-06T16:52:28Z",
+      "pushedAt": "2026-03-06T16:52:25Z",
+      "size": 625,
+      "openIssues": 0
+    },
+    {
+      "name": "chatbot",
+      "fullName": "SanjayKrishnanJV/chatbot",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/chatbot",
+      "homepage": "https://chatbot-gules-tau-74.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-03-06T12:42:43Z",
+      "updatedAt": "2026-03-06T12:51:41Z",
+      "pushedAt": "2026-03-06T12:42:53Z",
+      "size": 504,
+      "openIssues": 0
+    },
     {
       "name": "CricIQ",
       "fullName": "SanjayKrishnanJV/CricIQ",
@@ -51,6 +83,17 @@
   ],
   "pinnedRepos": [
     {
+      "name": "sanjaykrishnanjv",
+      "fullName": "SanjayKrishnanJV/sanjaykrishnanjv",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/sanjaykrishnanjv",
+      "homepage": "https://sanjaykrishnanjv.vercel.app",
+      "stars": 1,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
       "name": "CricIQ",
       "fullName": "SanjayKrishnanJV/CricIQ",
       "description": null,
@@ -71,22 +114,33 @@
       "forks": 0,
       "language": "PowerShell",
       "topics": []
+    },
+    {
+      "name": "chatbot",
+      "fullName": "SanjayKrishnanJV/chatbot",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/chatbot",
+      "homepage": "https://chatbot-gules-tau-74.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": []
     }
   ],
   "stats": {
-    "totalRepos": 2,
-    "totalStars": 2,
+    "totalRepos": 4,
+    "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
-      "TypeScript": 1538307,
-      "JavaScript": 8788,
+      "TypeScript": 2362764,
+      "CSS": 14154,
+      "JavaScript": 22655,
       "PowerShell": 29065,
       "Shell": 5346,
       "Batchfile": 4236,
-      "HTML": 2692,
-      "CSS": 882
+      "HTML": 2692
     },
     "contributions": {
       "totalContributions": 0,
@@ -94,5 +148,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-03-06T09:50:47.797Z"
+  "lastUpdated": "2026-03-06T16:52:40.419Z"
 }
