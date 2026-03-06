@@ -1,0 +1,115 @@
+[
+  {
+    "name": "Claude Code 4: Agentic Coding for Professional Developers",
+    "organization": "LinkedIn",
+    "issueDate": "Mar 2026",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Nerdio Manager for Enterprise Foundations (NME-201)",
+    "organization": "Nerdio",
+    "issueDate": "May 2025",
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQHxXvbN88NRgw/company-logo_100_100/B56ZYB_VI4GUAU-/0/1743790101358/getnerdio_logo?e=1774483200&v=beta&t=zV154DBLB4q1nBi1GU5umrB0lgGnKgYn29QGYRq1Xsk",
+    "certificateImage": "https://media.licdn.com/dms/image/v2/D562DAQEeA4SPd_KUvw/profile-treasury-document-cover-images_480/B56ZbbN0jKGsA0-/0/1747434557409?e=1773396000&v=beta&t=RyVaWgc1vAonSemUQW9wcwTfsPGoVm0QGTdEZL1AGMc"
+  },
+  {
+    "name": "Learning DNS",
+    "organization": "LinkedIn",
+    "issueDate": "Apr 2025",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Micro-Certification - Welcome to ServiceNow",
+    "organization": "ServiceNow",
+    "issueDate": "Dec 2024",
+    "credentialId": "Sanjay Krishnan JV",
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQG-sNe0_VNRnQ/company-logo_100_100/B56Zak7lUsGgAQ-/0/1746523805288/servicenow_logo?e=1774483200&v=beta&t=GH0taGTp7tWWcVVcO3zGDY_HeSMTsBnwscOOTzIcsj8",
+    "certificateImage": "https://media.licdn.com/dms/image/v2/D562DAQG3cqJXTtGAVQ/profile-treasury-document-cover-images_480/profile-treasury-document-cover-images_480/0/1733956141262?e=1773396000&v=beta&t=HcngKxmGf6Z29cAtr2BLl6S0SERROIjrph6pG9PV_bE"
+  },
+  {
+    "name": "Scrum Fundamentals Certified (SFC)",
+    "organization": "Vabro.ai and VMEdu.com (Scrum/Kanban/AI/Business Analysis/OKRs/Six Sigma/Sales and Marketing etc.)",
+    "issueDate": "Dec 2024",
+    "credentialId": "1059481",
+    "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQG9_uP8f-kpiw/company-logo_100_100/company-logo_100_100/0/1631356592679?e=1774483200&v=beta&t=oBn-OTqmUS4wGls4WKmsvWZjY8VYc7J425z1wJYFbQc",
+    "certificateImage": "https://media.licdn.com/dms/image/v2/D562DAQGjWYvrFqhVgw/profile-treasury-image-shrink_160_160/B56ZzCYanjKcAk-/0/1772787707928?e=1773396000&v=beta&t=AseBdiex31HDYUig7b7sSt8ie3SwGroDioEZbyMGt80"
+  },
+  {
+    "name": "IT Service Desk: Service Management",
+    "organization": "LinkedIn",
+    "issueDate": "Apr 2024",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Windows Server 2022: Installation and Configuration",
+    "organization": "LinkedIn",
+    "issueDate": "Mar 2024",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "ServiceNow IT Leadership Professional Certificate",
+    "organization": "ServiceNow",
+    "issueDate": "Nov 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/D560BAQG-sNe0_VNRnQ/company-logo_100_100/B56Zak7lUsGgAQ-/0/1746523805288/servicenow_logo?e=1774483200&v=beta&t=GH0taGTp7tWWcVVcO3zGDY_HeSMTsBnwscOOTzIcsj8"
+  },
+  {
+    "name": "Creating Your IT Strategy",
+    "organization": "LinkedIn",
+    "issueDate": "Nov 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Intro to Service Management with ITIL® 4",
+    "organization": "LinkedIn",
+    "issueDate": "Dec 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "ServiceNow: Basic Administration",
+    "organization": "LinkedIn",
+    "issueDate": "Nov 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Introduction to IT Architecture",
+    "organization": "LinkedIn",
+    "issueDate": "Nov 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Program Management for IT Professionals",
+    "organization": "LinkedIn",
+    "issueDate": "Oct 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Succeeding as a First-Time Tech Manager",
+    "organization": "LinkedIn",
+    "issueDate": "Oct 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Learning ITIL®",
+    "organization": "LinkedIn",
+    "issueDate": "Oct 2023",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQHaVYd13rRz3A/company-logo_100_100/company-logo_100_100/0/1638831590218/linkedin_logo?e=1774483200&v=beta&t=Rxz3WQoYd6hgn7CRQ_uIFOizEERqC2z4kccfR57TmqI"
+  },
+  {
+    "name": "Service Desk Skill Enhancement Certifications - Level 2",
+    "organization": "NTT DATA GLOBAL DELIVERY SERVICES PRIVATE LIMITED",
+    "issueDate": "May 2023"
+  },
+  {
+    "name": "Service Desk Skill Enhancement Certifications - Level 1",
+    "organization": "NTT DATA GLOBAL DELIVERY SERVICES PRIVATE LIMITED",
+    "issueDate": "Jun 2023"
+  },
+  {
+    "name": "ITIL® Foundation Certificate in IT Service Management",
+    "organization": "PeopleCert",
+    "issueDate": "Nov 2024 · Expires Nov 2027",
+    "credentialId": "GR671710314SK",
+    "logo": "https://media.licdn.com/dms/image/v2/D4D0BAQEY66hkTvsA5A/company-logo_100_100/company-logo_100_100/0/1726662854655/peoplecert_group_logo?e=1774483200&v=beta&t=q_kGgYIPp7QFthW1kGWuffGi40_E6ckNTSiCQxONR7g",
+    "certificateImage": "https://media.licdn.com/dms/image/v2/D562DAQEZmtK60sqRvA/profile-treasury-document-cover-images_480/profile-treasury-document-cover-images_480/0/1732737026997?e=1773396000&v=beta&t=xjBUQUDTqfUK8dwIZC0REkv_uYidQMOYPMztHH61oac"
+  }
+]

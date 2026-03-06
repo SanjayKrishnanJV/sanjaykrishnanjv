@@ -1,0 +1,144 @@
+{
+  "name": "Sanjay Krishnan JV",
+  "title": "Senior System Engineer @ Wellsky | ITIL V4 Certified | NME-201 | Mastery in Azure, AVD, Nerdio, VDI, Active Directory, Windows 365 | Tech Enthusiast | Unleashing Solutions for Seamless Operations",
+  "email": "sanjaykrishnanjv@gmail.com",
+  "location": "Bengaluru, Karnataka, India",
+  "timezone": "UTC +05:30",
+  "bio": "Currently serving as a Senior System Engineer at WellSky, contributing to IT infrastructure optimization using Powershell and AVD while supporting business continuity. The role emphasizes expertise in Virtual Desktop Infrastructure and aligns with WellSky’s mission to enhance healthcare technology solutions.  Graduating with a Bachelor of Engineering in Computer Science from United Institute of Technology, the professional has earned certifications in ITIL and Service Desk Skill Enhancement. These credentials underpin a strong commitment to leveraging automation and virtual desktop tools for seamless operations.",
+  "tagline": "Building the future, one line of code at a time",
+  "socialLinks": {
+    "github": "https://github.com/SanjayKrishnanJV",
+    "linkedin": "https://in.linkedin.com/in/sanjaykrishnanjv",
+    "website": "https://www.sanjaykrishnanjv.com",
+    "orcid": "https://orcid.org/0009-0008-8486-2404",
+    "whatsapp": "+918547858420",
+    "instagram": [
+      "https://www.instagram.com/victorious_triumphant/",
+      "https://www.instagram.com/victorious_arcadia/"
+    ]
+  },
+  "skills": {
+    "languages": [
+      "Powershell"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3"
+    ],
+    "backend": [
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "Django",
+      ".NET"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Redis"
+    ],
+    "cloud": [
+      "Azure",
+      "Microsoft Azure",
+      "GCP"
+    ],
+    "tools": [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "GitHub Actions"
+    ]
+  },
+  "experience": [
+    {
+      "company": "WellSky",
+      "position": "Senior System Engineer",
+      "location": "Bengaluru, Karnataka, India · Hybrid",
+      "startDate": "Feb 2025",
+      "endDate": null,
+      "current": true,
+      "description": "",
+      "achievements": []
+    },
+    {
+      "company": "HCLTech",
+      "position": "Senior Analyst",
+      "location": "Bengaluru, Karnataka, India · Hybrid",
+      "startDate": "Jan 2024",
+      "endDate": "Jan 2025 · 1 yr 1 mo",
+      "current": false,
+      "description": "",
+      "achievements": []
+    },
+    {
+      "company": "NTT DATA Services",
+      "position": "Senior Helpdesk Associate",
+      "location": "Bangalore Urban, Karnataka, India · On-site",
+      "startDate": "Feb 2022",
+      "endDate": "Jan 2024 · 2 yrs",
+      "current": false,
+      "description": "",
+      "achievements": []
+    },
+    {
+      "company": "[24]7.ai India",
+      "position": "Senior Customer Service Executive",
+      "location": "Bangalore",
+      "startDate": "Jul 2019",
+      "endDate": "Feb 2022 · 2 yrs 8 mos",
+      "current": false,
+      "description": "",
+      "achievements": []
+    },
+    {
+      "company": "Career Break",
+      "position": "Health and well-being",
+      "location": "Remote",
+      "startDate": "Jan 2018",
+      "endDate": "Jun 2019 · 1 yr 6 mos",
+      "current": false,
+      "description": "",
+      "achievements": []
+    },
+    {
+      "company": "mobius365",
+      "position": "Process Associate",
+      "location": "Coimbatore",
+      "startDate": "Jan 2017",
+      "endDate": "Dec 2017 · 1 yr",
+      "current": false,
+      "description": "",
+      "achievements": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "United Institute of technology, coimbatore",
+      "degree": "Bachelor of Engineering (BE)",
+      "field": "Computer Science",
+      "startDate": "2012",
+      "endDate": "2016"
+    },
+    {
+      "institution": "Sabari Higher Secondary school pallikurup",
+      "degree": "SSLC",
+      "field": "SSLC",
+      "startDate": "2004",
+      "endDate": "2014"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "ORCID Researcher",
+      "description": "Recognized researcher with ORCID identifier",
+      "date": "2024",
+      "url": "https://orcid.org/0009-0008-8486-2404"
+    }
+  ]
+}
