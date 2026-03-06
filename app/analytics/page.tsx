@@ -23,8 +23,11 @@ export default function AnalyticsPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Analytics <span className="gradient-text">Dashboard</span>
           </h1>
-          <p className="text-lg text-dark-600">
-            Real-time visitor statistics and insights
+          <p className="text-lg text-dark-600 mb-2">
+            Client-side visitor tracking and analytics demonstration
+          </p>
+          <p className="text-sm text-dark-700 bg-yellow-500/10 border border-yellow-500/20 rounded-lg px-4 py-2 inline-block">
+            Note: This is a demo dashboard using localStorage for client-side tracking
           </p>
         </div>
 

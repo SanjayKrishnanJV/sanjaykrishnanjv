@@ -33,14 +33,25 @@ export default function AnalyticsDashboard() {
   const [stats, setStats] = useState<any>(null);
   const [globalStats, setGlobalStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const visitorStats = getVisitorStats();
     const global = getGlobalStats();
     setStats(visitorStats);
     setGlobalStats(global);
     setLoading(false);
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="glass rounded-xl p-8 text-center">
+        <Activity className="w-12 h-12 text-primary-400 mx-auto mb-4 animate-pulse" />
+        <p className="text-dark-600">Loading analytics...</p>
+      </div>
+    );
+  }
 
   if (loading || !stats || !globalStats) {
     return (
