@@ -4,9 +4,18 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, Award } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
 
+interface Education {
+  institution: string;
+  degree: string;
+  field?: string;
+  startDate: string;
+  endDate: string;
+  grade?: string;
+}
+
 export default function Education() {
   const data = usePersonalData();
-  const education = data.education || [];
+  const education: Education[] = data.education || [];
 
   return (
     <section id="education" className="section bg-dark-100/50">
@@ -27,7 +36,7 @@ export default function Education() {
           </div>
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {education.map((edu, index) => (
+            {education.map((edu: Education, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}

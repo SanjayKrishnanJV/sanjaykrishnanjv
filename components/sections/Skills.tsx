@@ -13,47 +13,59 @@ export default function Skills() {
     const advancedSkills = ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js'];
     const intermediateSkills = ['Vue.js', 'Express', 'MongoDB', 'PostgreSQL'];
 
-    if (expertSkills.some(s => skill.includes(s))) return 95;
-    if (advancedSkills.some(s => skill.includes(s))) return 85;
-    if (intermediateSkills.some(s => skill.includes(s))) return 75;
+    if (expertSkills.some((s: string) => skill.includes(s))) return 95;
+    if (advancedSkills.some((s: string) => skill.includes(s))) return 85;
+    if (intermediateSkills.some((s: string) => skill.includes(s))) return 75;
     return 70;
   };
 
-  const skillCategories = [
+  interface Skill {
+    name: string;
+    level: number;
+  }
+
+  interface SkillCategory {
+    title: string;
+    icon: any;
+    skills: Skill[];
+    color: string;
+  }
+
+  const skillCategories: SkillCategory[] = [
     {
       title: 'Languages',
       icon: Code,
-      skills: data.skills.languages.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.languages.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-blue-500 to-cyan-500',
     },
     {
       title: 'Frontend',
       icon: Code,
-      skills: data.skills.frontend.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.frontend.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-purple-500 to-pink-500',
     },
     {
       title: 'Backend',
       icon: Database,
-      skills: data.skills.backend.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.backend.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-green-500 to-emerald-500',
     },
     {
       title: 'Databases',
       icon: Database,
-      skills: data.skills.databases.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.databases.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-orange-500 to-red-500',
     },
     {
       title: 'Cloud & DevOps',
       icon: Cloud,
-      skills: data.skills.cloud.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.cloud.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-indigo-500 to-blue-500',
     },
     {
       title: 'Tools',
       icon: Wrench,
-      skills: data.skills.tools.map(s => ({ name: s, level: getSkillLevel(s) })),
+      skills: data.skills.tools.map((s: string) => ({ name: s, level: getSkillLevel(s) })),
       color: 'from-yellow-500 to-orange-500',
     },
   ];
@@ -77,7 +89,7 @@ export default function Skills() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, index) => {
+            {skillCategories.map((category: SkillCategory, index: number) => {
               const Icon = category.icon;
               return (
                 <motion.div
@@ -96,7 +108,7 @@ export default function Skills() {
                   </div>
 
                   <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
+                    {category.skills.map((skill: Skill, skillIndex: number) => (
                       <div key={skill.name}>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm font-medium">{skill.name}</span>

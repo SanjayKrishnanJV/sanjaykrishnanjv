@@ -4,9 +4,16 @@ import { motion } from 'framer-motion';
 import { Trophy, ExternalLink, Calendar } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
 
+interface Achievement {
+  title: string;
+  description?: string;
+  date?: string;
+  url?: string;
+}
+
 export default function Achievements() {
   const data = usePersonalData();
-  const achievements = data.achievements || [];
+  const achievements: Achievement[] = data.achievements || [];
 
   if (achievements.length === 0) {
     return null;
@@ -31,7 +38,7 @@ export default function Achievements() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {achievements.map((achievement, index) => (
+            {achievements.map((achievement: Achievement, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}

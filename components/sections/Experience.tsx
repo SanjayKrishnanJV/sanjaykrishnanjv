@@ -4,9 +4,20 @@ import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Calendar } from 'lucide-react';
 import { usePersonalData } from '@/app/data-provider';
 
+interface Experience {
+  company: string;
+  position: string;
+  location?: string;
+  startDate: string;
+  endDate: string | null;
+  current: boolean;
+  description?: string;
+  achievements?: string[];
+}
+
 export default function Experience() {
   const data = usePersonalData();
-  const experiences = data.experience || [];
+  const experiences: Experience[] = data.experience || [];
 
   return (
     <section id="experience" className="section">
@@ -27,7 +38,7 @@ export default function Experience() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp: Experience, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -85,7 +96,7 @@ export default function Experience() {
                     <div>
                       <h4 className="font-semibold mb-3">Key Achievements:</h4>
                       <ul className="space-y-2">
-                        {exp.achievements.map((achievement, i) => (
+                        {exp.achievements.map((achievement: string, i: number) => (
                           <li key={i} className="flex items-start gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-2 flex-shrink-0" />
                             <span className="text-dark-700">{achievement}</span>
