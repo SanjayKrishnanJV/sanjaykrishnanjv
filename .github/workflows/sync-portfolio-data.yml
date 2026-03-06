@@ -40,21 +40,9 @@ jobs:
         run: npm run sync-github
         continue-on-error: true
 
-      - name: Sync LinkedIn profile
-        env:
-          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
-          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
-          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
-        run: npm run sync-linkedin
-        continue-on-error: true
-
-      - name: Sync LinkedIn posts
-        env:
-          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
-          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
-          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
-        run: npm run sync-linkedin-posts
-        continue-on-error: true
+      # LinkedIn sync removed for security - run these manually:
+      # npm run sync-linkedin
+      # npm run sync-linkedin-posts
 
       - name: Sync certifications
         run: npm run sync-certifications
