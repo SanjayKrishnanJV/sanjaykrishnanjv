@@ -9,7 +9,7 @@
     "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 4,
+    "publicRepos": 3,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
@@ -17,19 +17,19 @@
   },
   "repositories": [
     {
-      "name": "My-Repo",
-      "fullName": "SanjayKrishnanJV/My-Repo",
-      "description": "My Repo",
-      "url": "https://github.com/SanjayKrishnanJV/My-Repo",
-      "homepage": "",
+      "name": "chatbot",
+      "fullName": "SanjayKrishnanJV/chatbot",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/chatbot",
+      "homepage": "https://chatbot-gules-tau-74.vercel.app",
       "stars": 1,
       "forks": 0,
-      "language": null,
+      "language": "TypeScript",
       "topics": [],
-      "createdAt": "2025-04-16T00:22:54Z",
-      "updatedAt": "2026-03-12T18:21:37Z",
-      "pushedAt": "2026-03-12T18:21:33Z",
-      "size": 27,
+      "createdAt": "2026-03-06T12:42:43Z",
+      "updatedAt": "2026-03-13T18:41:39Z",
+      "pushedAt": "2026-03-06T12:42:53Z",
+      "size": 504,
       "openIssues": 0
     },
     {
@@ -43,25 +43,9 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-03-12T01:29:44Z",
-      "pushedAt": "2026-03-12T01:29:41Z",
-      "size": 777,
-      "openIssues": 0
-    },
-    {
-      "name": "chatbot",
-      "fullName": "SanjayKrishnanJV/chatbot",
-      "description": null,
-      "url": "https://github.com/SanjayKrishnanJV/chatbot",
-      "homepage": "https://chatbot-gules-tau-74.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": [],
-      "createdAt": "2026-03-06T12:42:43Z",
-      "updatedAt": "2026-03-06T12:51:41Z",
-      "pushedAt": "2026-03-06T12:42:53Z",
-      "size": 504,
+      "updatedAt": "2026-03-13T01:45:05Z",
+      "pushedAt": "2026-03-13T01:45:02Z",
+      "size": 778,
       "openIssues": 0
     },
     {
@@ -83,14 +67,14 @@
   ],
   "pinnedRepos": [
     {
-      "name": "My-Repo",
-      "fullName": "SanjayKrishnanJV/My-Repo",
-      "description": "My Repo",
-      "url": "https://github.com/SanjayKrishnanJV/My-Repo",
-      "homepage": "",
+      "name": "chatbot",
+      "fullName": "SanjayKrishnanJV/chatbot",
+      "description": null,
+      "url": "https://github.com/SanjayKrishnanJV/chatbot",
+      "homepage": "https://chatbot-gules-tau-74.vercel.app",
       "stars": 1,
       "forks": 0,
-      "language": null,
+      "language": "TypeScript",
       "topics": []
     },
     {
@@ -114,30 +98,19 @@
       "forks": 0,
       "language": "TypeScript",
       "topics": []
-    },
-    {
-      "name": "chatbot",
-      "fullName": "SanjayKrishnanJV/chatbot",
-      "description": null,
-      "url": "https://github.com/SanjayKrishnanJV/chatbot",
-      "homepage": "https://chatbot-gules-tau-74.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": []
     }
   ],
   "stats": {
-    "totalRepos": 4,
+    "totalRepos": 3,
     "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
       "TypeScript": 2559635,
-      "MDX": 18360,
-      "CSS": 15191,
       "JavaScript": 22559,
+      "CSS": 15191,
+      "MDX": 18360,
       "PowerShell": 5601,
       "Shell": 5346,
       "Batchfile": 4236,
@@ -149,5 +122,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-03-13T01:45:01.727Z"
+  "lastUpdated": "2026-03-14T01:42:33.249Z"
 }
