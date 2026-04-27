@@ -6,7 +6,7 @@
     "bio": null,
     "company": "@mediwareinc ",
     "location": "Bangalore",
-    "email": "sanjay.krishnanjv@wellsky.com",
+    "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
     "publicRepos": 3,
@@ -27,9 +27,9 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-04-26T02:13:48Z",
-      "pushedAt": "2026-04-26T02:13:45Z",
-      "size": 710,
+      "updatedAt": "2026-04-26T03:43:43Z",
+      "pushedAt": "2026-04-26T03:43:39Z",
+      "size": 712,
       "openIssues": 0
     },
     {
@@ -122,5 +122,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-04-26T03:43:38.147Z"
+  "lastUpdated": "2026-04-27T02:24:32.570Z"
 }
