@@ -100,8 +100,7 @@
 ---
 
 ## 🐍 Contribution Snake Animation
-
-![snake gif](https://raw.githubusercontent.com/SanjayKrisnanJV/SanjayKrishnanJV/output/github-contribution-grid-snake.svg)
+![snake gif](https://raw.githubusercontent.com/SanjayKrishnanJV/SanjayKrishnanJV/output/github-contribution-grid-snake-dark.svg)
 
 ---
 
