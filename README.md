@@ -77,6 +77,18 @@
 
 ---
 
+## 🧠 Contribution Heatmap
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/SanjayKrishnanJV/SanjayKrishnanJV/main/github-metrics.svg" />
+</p>
+---
+
+## 📊 3D Contribution Graph
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=SanjayKrishnanJV&theme=tokyo-night" />
+
+---
 ## 🧠 Currently Learning
 
 - 📦 Terraform (Infrastructure as Code)
