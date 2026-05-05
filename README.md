@@ -27,6 +27,21 @@
 
 ---
 
+## 🔥 Skill Badges
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Azure-Cloud-blue?style=for-the-badge&logo=microsoftazure">
+  <img src="https://img.shields.io/badge/AWS-Basics-orange?style=for-the-badge&logo=amazonaws">
+  <img src="https://img.shields.io/badge/Docker-Containerization-blue?style=for-the-badge&logo=docker">
+  <img src="https://img.shields.io/badge/Terraform-IaC-purple?style=for-the-badge&logo=terraform">
+  <img src="https://img.shields.io/badge/PowerShell-Automation-5391FE?style=for-the-badge&logo=powershell">
+  <img src="https://img.shields.io/badge/Linux-System-black?style=for-the-badge&logo=linux">
+  <img src="https://img.shields.io/badge/Git-VersionControl-orange?style=for-the-badge&logo=git">
+  <img src="https://img.shields.io/badge/GitHub%20Actions-CI/CD-2088FF?style=for-the-badge&logo=githubactions">
+</p>
+
+---
+
 ## ⚡ Core Strengths
 
 ✔️ Infrastructure Automation (PowerShell, IaC - Terraform learning)  
