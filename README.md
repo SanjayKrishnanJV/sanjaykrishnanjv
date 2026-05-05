@@ -71,17 +71,14 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=SanjayKrishnanJV&show_icons=true&theme=tokyonight" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=SanjayKrishnanJV&theme=tokyonight" />
 </p>
 
 ---
 
-## 🧠 Contribution Heatmap
+## 🐍 Contribution Snake Animation
+![snake gif](https://raw.githubusercontent.com/SanjayKrishnanJV/SanjayKrishnanJV/output/github-contribution-grid-snake-dark.svg)
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/SanjayKrishnanJV/SanjayKrishnanJV/main/github-metrics.svg" />
-</p>
 ---
 
 ## 📊 3D Contribution Graph
@@ -124,12 +121,6 @@
 > Building systems that scale to millions of users,  
 > while staying efficient, reliable, and elegant.
 
----
-
-## 🐍 Contribution Snake Animation
-![snake gif](https://raw.githubusercontent.com/SanjayKrishnanJV/SanjayKrishnanJV/output/github-contribution-grid-snake-dark.svg)
-
----
 
 ## ⚡ Fun Fact
 
