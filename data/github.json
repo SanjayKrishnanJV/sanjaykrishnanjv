@@ -9,7 +9,7 @@
     "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 3,
+    "publicRepos": 4,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
@@ -27,10 +27,26 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-05-12T02:34:23Z",
-      "pushedAt": "2026-05-12T02:34:19Z",
-      "size": 1063,
-      "openIssues": 0
+      "updatedAt": "2026-05-14T02:41:31Z",
+      "pushedAt": "2026-05-14T02:41:28Z",
+      "size": 1149,
+      "openIssues": 1
+    },
+    {
+      "name": "OrbyJewels",
+      "fullName": "SanjayKrishnanJV/OrbyJewels",
+      "description": "Orby Jewels",
+      "url": "https://github.com/SanjayKrishnanJV/OrbyJewels",
+      "homepage": "https://orby-jewels.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-05-12T17:59:06Z",
+      "updatedAt": "2026-05-13T13:22:38Z",
+      "pushedAt": "2026-05-13T13:26:41Z",
+      "size": 345,
+      "openIssues": 1
     },
     {
       "name": "chatbot",
@@ -98,19 +114,30 @@
       "forks": 0,
       "language": "TypeScript",
       "topics": []
+    },
+    {
+      "name": "OrbyJewels",
+      "fullName": "SanjayKrishnanJV/OrbyJewels",
+      "description": "Orby Jewels",
+      "url": "https://github.com/SanjayKrishnanJV/OrbyJewels",
+      "homepage": "https://orby-jewels.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": []
     }
   ],
   "stats": {
-    "totalRepos": 3,
+    "totalRepos": 4,
     "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
-      "TypeScript": 2559635,
+      "TypeScript": 2899559,
       "MDX": 18360,
-      "CSS": 15191,
-      "JavaScript": 22559,
+      "CSS": 20788,
+      "JavaScript": 22704,
       "PowerShell": 5601,
       "Shell": 5346,
       "Batchfile": 4236,
@@ -122,5 +149,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-05-12T02:35:15.930Z"
+  "lastUpdated": "2026-05-14T02:42:09.539Z"
 }
