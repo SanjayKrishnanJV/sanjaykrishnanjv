@@ -9,7 +9,7 @@
     "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 4,
+    "publicRepos": 5,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
@@ -27,10 +27,26 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-05-15T02:42:06Z",
-      "pushedAt": "2026-05-15T02:42:02Z",
-      "size": 1162,
+      "updatedAt": "2026-05-16T02:31:37Z",
+      "pushedAt": "2026-05-16T02:31:33Z",
+      "size": 1173,
       "openIssues": 1
+    },
+    {
+      "name": "Winnoventures",
+      "fullName": "SanjayKrishnanJV/Winnoventures",
+      "description": "Winnoventures | Excellence of Innovation",
+      "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-05-15T15:40:22Z",
+      "updatedAt": "2026-05-15T18:35:19Z",
+      "pushedAt": "2026-05-15T18:35:15Z",
+      "size": 190,
+      "openIssues": 0
     },
     {
       "name": "OrbyJewels",
@@ -116,6 +132,17 @@
       "topics": []
     },
     {
+      "name": "Winnoventures",
+      "fullName": "SanjayKrishnanJV/Winnoventures",
+      "description": "Winnoventures | Excellence of Innovation",
+      "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
+      "homepage": null,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
       "name": "OrbyJewels",
       "fullName": "SanjayKrishnanJV/OrbyJewels",
       "description": "Orby Jewels",
@@ -128,16 +155,16 @@
     }
   ],
   "stats": {
-    "totalRepos": 4,
+    "totalRepos": 5,
     "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
-      "TypeScript": 2899559,
+      "TypeScript": 3241732,
       "MDX": 18360,
-      "CSS": 20788,
-      "JavaScript": 22704,
+      "CSS": 27668,
+      "JavaScript": 23263,
       "PowerShell": 5601,
       "Shell": 5346,
       "Batchfile": 4236,
@@ -149,5 +176,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-05-15T02:42:50.754Z"
+  "lastUpdated": "2026-05-16T02:32:22.298Z"
 }
