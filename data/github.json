@@ -9,7 +9,7 @@
     "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 5,
+    "publicRepos": 6,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
@@ -27,25 +27,41 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-05-16T02:31:37Z",
-      "pushedAt": "2026-05-16T02:31:33Z",
-      "size": 1173,
+      "updatedAt": "2026-05-17T02:39:20Z",
+      "pushedAt": "2026-05-17T02:39:16Z",
+      "size": 1186,
       "openIssues": 1
+    },
+    {
+      "name": "Winora",
+      "fullName": "SanjayKrishnanJV/Winora",
+      "description": "he Modern Customer Communication Platform",
+      "url": "https://github.com/SanjayKrishnanJV/Winora",
+      "homepage": "https://winora-sandy.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-05-16T09:44:27Z",
+      "updatedAt": "2026-05-16T23:15:10Z",
+      "pushedAt": "2026-05-16T23:15:06Z",
+      "size": 463,
+      "openIssues": 0
     },
     {
       "name": "Winnoventures",
       "fullName": "SanjayKrishnanJV/Winnoventures",
       "description": "Winnoventures | Excellence of Innovation",
       "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
-      "homepage": null,
+      "homepage": "https://winnoventures.vercel.app",
       "stars": 0,
       "forks": 0,
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-05-15T15:40:22Z",
-      "updatedAt": "2026-05-15T18:35:19Z",
-      "pushedAt": "2026-05-15T18:35:15Z",
-      "size": 190,
+      "updatedAt": "2026-05-16T09:48:58Z",
+      "pushedAt": "2026-05-16T09:48:54Z",
+      "size": 217,
       "openIssues": 0
     },
     {
@@ -132,11 +148,22 @@
       "topics": []
     },
     {
+      "name": "Winora",
+      "fullName": "SanjayKrishnanJV/Winora",
+      "description": "he Modern Customer Communication Platform",
+      "url": "https://github.com/SanjayKrishnanJV/Winora",
+      "homepage": "https://winora-sandy.vercel.app",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": []
+    },
+    {
       "name": "Winnoventures",
       "fullName": "SanjayKrishnanJV/Winnoventures",
       "description": "Winnoventures | Excellence of Innovation",
       "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
-      "homepage": null,
+      "homepage": "https://winnoventures.vercel.app",
       "stars": 0,
       "forks": 0,
       "language": "TypeScript",
@@ -155,20 +182,21 @@
     }
   ],
   "stats": {
-    "totalRepos": 5,
+    "totalRepos": 6,
     "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
-      "TypeScript": 3241732,
+      "TypeScript": 3966817,
       "MDX": 18360,
-      "CSS": 27668,
-      "JavaScript": 23263,
+      "CSS": 41665,
+      "JavaScript": 25491,
+      "Dockerfile": 2845,
+      "HTML": 4092,
       "PowerShell": 5601,
       "Shell": 5346,
-      "Batchfile": 4236,
-      "HTML": 2692
+      "Batchfile": 4236
     },
     "contributions": {
       "totalContributions": 0,
@@ -176,5 +204,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-05-16T02:32:22.298Z"
+  "lastUpdated": "2026-05-17T02:39:55.017Z"
 }
