@@ -6,10 +6,10 @@
     "bio": null,
     "company": "@mediwareinc ",
     "location": "Bangalore",
-    "email": "sanjay.krishnanjv@wellsky.com",
+    "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
-    "publicRepos": 6,
+    "publicRepos": 3,
     "publicGists": 0,
     "followers": 1,
     "following": 4,
@@ -27,57 +27,9 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-05-24T02:47:40Z",
-      "pushedAt": "2026-05-24T02:56:10Z",
-      "size": 907,
-      "openIssues": 1
-    },
-    {
-      "name": "Winora",
-      "fullName": "SanjayKrishnanJV/Winora",
-      "description": "he Modern Customer Communication Platform",
-      "url": "https://github.com/SanjayKrishnanJV/Winora",
-      "homepage": "https://winora-sandy.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": [],
-      "createdAt": "2026-05-16T09:44:27Z",
-      "updatedAt": "2026-05-22T06:00:29Z",
-      "pushedAt": "2026-05-22T06:00:25Z",
-      "size": 1558,
-      "openIssues": 0
-    },
-    {
-      "name": "Winnoventures",
-      "fullName": "SanjayKrishnanJV/Winnoventures",
-      "description": "Winnoventures | Excellence of Innovation",
-      "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
-      "homepage": "https://winnoventures.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": [],
-      "createdAt": "2026-05-15T15:40:22Z",
-      "updatedAt": "2026-05-21T20:50:28Z",
-      "pushedAt": "2026-05-21T20:50:24Z",
-      "size": 221,
-      "openIssues": 0
-    },
-    {
-      "name": "OrbyJewels",
-      "fullName": "SanjayKrishnanJV/OrbyJewels",
-      "description": "Orby Jewels",
-      "url": "https://github.com/SanjayKrishnanJV/OrbyJewels",
-      "homepage": "https://orby-jewels.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": [],
-      "createdAt": "2026-05-12T17:59:06Z",
-      "updatedAt": "2026-05-13T13:22:38Z",
-      "pushedAt": "2026-05-13T13:26:41Z",
-      "size": 345,
+      "updatedAt": "2026-05-25T02:55:47Z",
+      "pushedAt": "2026-05-25T02:55:42Z",
+      "size": 910,
       "openIssues": 1
     },
     {
@@ -146,57 +98,23 @@
       "forks": 0,
       "language": "TypeScript",
       "topics": []
-    },
-    {
-      "name": "Winora",
-      "fullName": "SanjayKrishnanJV/Winora",
-      "description": "he Modern Customer Communication Platform",
-      "url": "https://github.com/SanjayKrishnanJV/Winora",
-      "homepage": "https://winora-sandy.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": []
-    },
-    {
-      "name": "Winnoventures",
-      "fullName": "SanjayKrishnanJV/Winnoventures",
-      "description": "Winnoventures | Excellence of Innovation",
-      "url": "https://github.com/SanjayKrishnanJV/Winnoventures",
-      "homepage": "https://winnoventures.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": []
-    },
-    {
-      "name": "OrbyJewels",
-      "fullName": "SanjayKrishnanJV/OrbyJewels",
-      "description": "Orby Jewels",
-      "url": "https://github.com/SanjayKrishnanJV/OrbyJewels",
-      "homepage": "https://orby-jewels.vercel.app",
-      "stars": 0,
-      "forks": 0,
-      "language": "TypeScript",
-      "topics": []
     }
   ],
   "stats": {
-    "totalRepos": 6,
+    "totalRepos": 3,
     "totalStars": 3,
     "totalForks": 0,
     "followers": 1,
     "following": 4,
     "languages": {
-      "TypeScript": 5277806,
+      "TypeScript": 2559635,
       "MDX": 18360,
-      "CSS": 41771,
-      "JavaScript": 34804,
-      "Dockerfile": 2845,
-      "HTML": 4092,
+      "CSS": 15191,
+      "JavaScript": 22559,
       "PowerShell": 5601,
       "Shell": 5346,
-      "Batchfile": 4236
+      "Batchfile": 4236,
+      "HTML": 2692
     },
     "contributions": {
       "totalContributions": 0,
@@ -204,5 +122,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-05-24T04:18:06.645Z"
+  "lastUpdated": "2026-05-25T02:56:16.897Z"
 }
