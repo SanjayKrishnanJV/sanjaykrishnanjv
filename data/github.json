@@ -27,25 +27,25 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-06-25T02:46:27Z",
-      "pushedAt": "2026-06-25T02:46:23Z",
-      "size": 1005,
+      "updatedAt": "2026-06-26T02:50:46Z",
+      "pushedAt": "2026-06-26T02:50:41Z",
+      "size": 1018,
       "openIssues": 1
     },
     {
-      "name": "LearnFlow-AI",
-      "fullName": "SanjayKrishnanJV/LearnFlow-AI",
+      "name": "Wintrail",
+      "fullName": "SanjayKrishnanJV/Wintrail",
       "description": null,
-      "url": "https://github.com/SanjayKrishnanJV/LearnFlow-AI",
+      "url": "https://github.com/SanjayKrishnanJV/Wintrail",
       "homepage": null,
       "stars": 0,
       "forks": 0,
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2026-06-23T20:59:58Z",
-      "updatedAt": "2026-06-24T23:33:00Z",
-      "pushedAt": "2026-06-24T23:32:56Z",
-      "size": 104,
+      "updatedAt": "2026-06-25T23:50:28Z",
+      "pushedAt": "2026-06-25T23:50:22Z",
+      "size": 7254,
       "openIssues": 0
     },
     {
@@ -89,10 +89,10 @@
       "topics": []
     },
     {
-      "name": "LearnFlow-AI",
-      "fullName": "SanjayKrishnanJV/LearnFlow-AI",
+      "name": "Wintrail",
+      "fullName": "SanjayKrishnanJV/Wintrail",
       "description": null,
-      "url": "https://github.com/SanjayKrishnanJV/LearnFlow-AI",
+      "url": "https://github.com/SanjayKrishnanJV/Wintrail",
       "homepage": null,
       "stars": 0,
       "forks": 0,
@@ -109,9 +109,11 @@
     "languages": {
       "TypeScript": 1887637,
       "MDX": 18360,
-      "CSS": 10218,
-      "JavaScript": 185407,
-      "HTML": 3349,
+      "CSS": 10380,
+      "JavaScript": 349462,
+      "HTML": 30692,
+      "Swift": 4989,
+      "Java": 1299,
       "PowerShell": 5601,
       "Shell": 5346,
       "Batchfile": 4236
@@ -122,5 +124,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-06-25T02:47:12.939Z"
+  "lastUpdated": "2026-06-26T02:51:48.790Z"
 }
