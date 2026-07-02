@@ -4,7 +4,7 @@
     "name": "Sanjay Krishnan JV",
     "avatar": "https://avatars.githubusercontent.com/u/206757422?v=4",
     "bio": null,
-    "company": "@mediwareinc ",
+    "company": null,
     "location": "Bangalore",
     "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
@@ -27,9 +27,9 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-07-01T02:56:07Z",
-      "pushedAt": "2026-07-01T02:56:03Z",
-      "size": 1085,
+      "updatedAt": "2026-07-02T02:46:14Z",
+      "pushedAt": "2026-07-02T02:46:09Z",
+      "size": 1098,
       "openIssues": 1
     },
     {
@@ -124,5 +124,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-07-01T02:56:57.210Z"
+  "lastUpdated": "2026-07-02T02:47:11.696Z"
 }
