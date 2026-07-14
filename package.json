@@ -53,6 +53,9 @@
   },
   "overrides": {
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "next": {
+      "postcss": "^8.5.12"
+    }
   }
 }
