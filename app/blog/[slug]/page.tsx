@@ -1,14 +1,14 @@
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-import { Calendar, Clock, Tag, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
-import BlogShareButtons from '@/components/blog/BlogShareButtons';
-import FloatingShareSidebar from '@/components/blog/FloatingShareSidebar';
+import { generateShareUrls } from '@/lib/social-share';
+import { formatDate } from '@/lib/utils';
+import { PageShell } from '@/components/redesign/layout/PageShell';
 import 'highlight.js/styles/github-dark.css';
 
 interface BlogPostPageProps {
@@ -57,78 +57,48 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-
-  const shareData = {
+  const shareUrls = generateShareUrls({
     url: `https://www.sanjaykrishnanjv.com/blog/${slug}`,
     title: post.title,
     description: post.description,
     hashtags: post.tags,
-  };
+  });
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Floating Share Sidebar */}
-      <FloatingShareSidebar data={shareData} />
+    <PageShell breadcrumb={`~/writing/${slug}.mdx`}>
+      <article>
+        <div className="font-mono text-sm text-text-faint">
+          <span className="text-accent">$</span> cat {slug}.mdx
+        </div>
 
-      <article className="container-custom py-20 max-w-4xl">
-        {/* Back Button */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Blog
-        </Link>
+        <h1 className="mt-4 font-mono text-2xl font-bold leading-tight text-text md:text-4xl">
+          {post.title}
+        </h1>
 
-        {/* Header */}
-        <header className="mb-12">
-          <h1 className="text-5xl font-bold mb-6">{post.title}</h1>
+        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-text-faint">
+          <span>{formatDate(post.date)}</span>
+          <span>{post.readingTime}</span>
+          <span>by {post.author}</span>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-dark-600 mb-6">
-            <span className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
-            <span className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              {post.readingTime}
-            </span>
-            <span className="text-dark-700">By {post.author}</span>
-          </div>
-
-          {/* Tags */}
-          {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-1 px-3 py-1 glass rounded-full text-sm"
-                >
-                  <Tag className="w-3 h-3" />
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </header>
-
-        {/* Cover Image */}
-        {post.coverImage && (
-          <div className="mb-12 rounded-xl overflow-hidden">
-            <img
-              src={post.coverImage}
-              alt={post.title}
-              className="w-full h-auto object-cover"
-            />
+        {post.tags.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-3">
+            {post.tags.map((tag) => (
+              <span key={tag} className="font-mono text-[10px] uppercase tracking-widest text-accent">
+                #{tag}
+              </span>
+            ))}
           </div>
         )}
 
-        {/* Content */}
-        <div className="prose prose-invert prose-lg max-w-none">
+        {post.coverImage && (
+          <div className="mt-8 border border-rule">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={post.coverImage} alt={post.title} className="h-auto w-full object-cover" />
+          </div>
+        )}
+
+        <div className="prose prose-invert mt-10 max-w-none border-t border-rule pt-8">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[
@@ -149,27 +119,63 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </ReactMarkdown>
         </div>
 
-        {/* Share Buttons */}
-        <div className="mt-12">
-          <BlogShareButtons
-            title={post.title}
-            description={post.description}
-            slug={slug}
-            tags={post.tags}
-          />
+        <div className="mt-12 border-t border-rule pt-6">
+          <div className="font-mono text-sm text-text-faint">
+            <span className="text-accent">$</span> ./share.sh --{slug}
+          </div>
+          <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs">
+            <a
+              href={shareUrls.twitter}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="view"
+              data-cursor-text="Open ↗"
+              className="text-text-soft transition-colors hover:text-accent"
+            >
+              --x
+            </a>
+            <a
+              href={shareUrls.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="view"
+              data-cursor-text="Open ↗"
+              className="text-text-soft transition-colors hover:text-accent"
+            >
+              --linkedin
+            </a>
+            <a
+              href={shareUrls.hackernews}
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="view"
+              data-cursor-text="Open ↗"
+              className="text-text-soft transition-colors hover:text-accent"
+            >
+              --hackernews
+            </a>
+            <a
+              href={shareUrls.email}
+              data-cursor="view"
+              data-cursor-text="Open ↗"
+              className="text-text-soft transition-colors hover:text-accent"
+            >
+              --email
+            </a>
+          </div>
         </div>
 
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-white/10">
+        <footer className="mt-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors"
+            data-cursor="view"
+            data-cursor-text="Back"
+            className="inline-flex items-center gap-2 font-mono text-xs text-text-faint transition-colors hover:text-accent"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to all articles
+            <span className="text-accent">$</span> cd ../writing
           </Link>
         </footer>
       </article>
-    </main>
+    </PageShell>
   );
 }

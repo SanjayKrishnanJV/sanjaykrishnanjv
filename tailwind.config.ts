@@ -10,6 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        bg: 'var(--bg)',
+        'bg-panel': 'var(--bg-panel)',
+        'bg-elevated': 'var(--bg-elevated)',
+        text: 'var(--text)',
+        'text-soft': 'var(--text-soft)',
+        'text-faint': 'var(--text-faint)',
+        rule: 'var(--rule)',
+        accent: 'var(--accent)',
+        'accent-dim': 'var(--accent-dim)',
+        'accent-ink': 'var(--accent-ink)',
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
@@ -42,6 +52,15 @@ const config: Config = {
       },
       backdropBlur: {
         xs: '2px',
+      },
+      fontFamily: {
+        display: ['var(--font-plex-sans)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-plex-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-plex-mono)', 'ui-monospace', 'monospace'],
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'in-out-quart': 'cubic-bezier(0.76, 0, 0.24, 1)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

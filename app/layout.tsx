@@ -1,13 +1,25 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
-import { BatmanSpotlight } from '@/components/ui/BatmanSpotlight';
 
 const inter = Inter({ subsets: ['latin'] });
+
+// Redesign type system: two families from the same engineering-heritage
+// type system (IBM Plex) — sans for headlines/body, mono for data/labels.
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-plex-sans',
+});
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-plex-mono',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.sanjaykrishnanjv.com'),
@@ -125,11 +137,18 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={cn(inter.className, 'antialiased')} suppressHydrationWarning>
+      <body
+        className={cn(
+          inter.className,
+          plexSans.variable,
+          plexMono.variable,
+          'antialiased'
+        )}
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           {children}
         </ThemeProvider>
-        <BatmanSpotlight />
         <Analytics />
         <SpeedInsights />
       </body>
