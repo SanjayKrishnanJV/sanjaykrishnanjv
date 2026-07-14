@@ -31,6 +31,12 @@ interface Post {
   description: string;
 }
 
+interface LinkedInPost {
+  date: string;
+  url: string;
+  excerpt: string;
+}
+
 interface SEOContentProps {
   name: string;
   role: string;
@@ -46,6 +52,9 @@ interface SEOContentProps {
   email: string;
   github: string;
   linkedin: string;
+  linkedinPosts?: LinkedInPost[];
+  newsletter?: { name: string; url: string; description: string };
+  instagram?: { url: string; handle: string };
 }
 
 /**
@@ -73,6 +82,9 @@ export function SEOContent({
   email,
   github,
   linkedin,
+  linkedinPosts,
+  newsletter,
+  instagram,
 }: SEOContentProps) {
   return (
     <div className="sr-only">
@@ -128,6 +140,31 @@ export function SEOContent({
           ))}
         </ul>
       </section>
+
+      {(linkedinPosts?.length || newsletter || instagram) && (
+        <section>
+          <h2>Elsewhere</h2>
+          {linkedinPosts && linkedinPosts.length > 0 && (
+            <ul>
+              {linkedinPosts.map((post) => (
+                <li key={post.url}>
+                  <a href={post.url}>LinkedIn, {post.date}</a> — {post.excerpt}
+                </li>
+              ))}
+            </ul>
+          )}
+          {newsletter && (
+            <p>
+              Newsletter: <a href={newsletter.url}>{newsletter.name}</a> — {newsletter.description}
+            </p>
+          )}
+          {instagram && (
+            <p>
+              Instagram: <a href={instagram.url}>@{instagram.handle}</a>
+            </p>
+          )}
+        </section>
+      )}
 
       <section>
         <h2>Writing</h2>

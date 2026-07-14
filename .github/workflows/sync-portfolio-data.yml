@@ -40,9 +40,8 @@ jobs:
         run: npm run sync-github
         continue-on-error: true
 
-      # LinkedIn sync removed for security - run these manually:
+      # LinkedIn sync removed for security - run manually:
       # npm run sync-linkedin
-      # npm run sync-linkedin-posts
 
       - name: Sync certifications
         run: npm run sync-certifications

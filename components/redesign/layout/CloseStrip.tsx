@@ -9,10 +9,12 @@ interface CloseStripProps {
   email: string;
   github: string;
   linkedin: string;
+  instagram?: string;
+  newsletter?: string;
   location: string;
 }
 
-export function CloseStrip({ email, github, linkedin, location }: CloseStripProps) {
+export function CloseStrip({ email, github, linkedin, instagram, newsletter, location }: CloseStripProps) {
   const rootRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
@@ -64,6 +66,32 @@ export function CloseStrip({ email, github, linkedin, location }: CloseStripProp
         >
           --linkedin <span className="text-text-faint">{linkedin.replace('https://', '')}</span>
         </a>
+        {instagram && (
+          <a
+            href={instagram}
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="view"
+            data-cursor-text="Open ↗"
+            data-out-links
+            className="text-text-soft transition-colors hover:text-accent"
+          >
+            --instagram <span className="text-text-faint">{instagram.replace('https://', '')}</span>
+          </a>
+        )}
+        {newsletter && (
+          <a
+            href={newsletter}
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="view"
+            data-cursor-text="Subscribe ↗"
+            data-out-links
+            className="text-text-soft transition-colors hover:text-accent"
+          >
+            --newsletter <span className="text-text-faint">{newsletter.replace('https://', '')}</span>
+          </a>
+        )}
       </div>
 
       <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-text-faint">

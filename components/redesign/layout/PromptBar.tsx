@@ -17,13 +17,17 @@ const ROUTES: Record<string, string> = {
   stats: 'systems',
   credentials: 'credentials',
   certs: 'credentials',
+  social: 'social',
+  linkedin: 'social',
+  instagram: 'social',
+  newsletter: 'social',
   writing: 'writing',
   blog: 'writing',
   contact: 'contact',
 };
 
 const HELP_TEXT =
-  'available: whoami, about, career, skills, work, systems, credentials, writing, contact, clear';
+  'available: whoami, about, career, skills, work, systems, credentials, social, writing, contact, clear';
 
 interface PromptBarProps {
   onNavigate: (id: string) => void;

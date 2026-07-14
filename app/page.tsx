@@ -12,7 +12,9 @@ import { SkillsPanel } from '@/components/redesign/skills/SkillsPanel';
 import { ProjectsExhibit } from '@/components/redesign/projects/ProjectsExhibit';
 import { SystemsReadout } from '@/components/redesign/systems/SystemsReadout';
 import { CredentialsIndex } from '@/components/redesign/credentials/CredentialsIndex';
+import { SocialFeed } from '@/components/redesign/social/SocialFeed';
 import { Dispatches } from '@/components/redesign/dispatches/Dispatches';
+import { linkedinPosts, newsletter, instagram } from '@/content/social';
 
 function dedupe(items: string[]) {
   return Array.from(new Set(items.map((i) => (i === 'Microsoft Azure' ? 'Azure' : i))));
@@ -124,6 +126,18 @@ export default function Home() {
       ),
     },
     {
+      id: 'social',
+      label: 'social.log',
+      element: (
+        <SocialFeed
+          linkedinUrl={personal.socialLinks.linkedin}
+          linkedinPosts={linkedinPosts}
+          newsletter={newsletter}
+          instagram={instagram}
+        />
+      ),
+    },
+    {
       id: 'writing',
       label: 'writing/',
       element: <Dispatches posts={posts} />,
@@ -136,6 +150,8 @@ export default function Home() {
           email={personal.email}
           github={personal.socialLinks.github}
           linkedin={personal.socialLinks.linkedin}
+          instagram={personal.socialLinks.instagram}
+          newsletter={personal.socialLinks.linkedinNewsletter}
           location="Bengaluru, India"
         />
       ),
@@ -168,6 +184,9 @@ export default function Home() {
         email={personal.email}
         github={personal.socialLinks.github}
         linkedin={personal.socialLinks.linkedin}
+        linkedinPosts={linkedinPosts}
+        newsletter={newsletter}
+        instagram={{ url: instagram.url, handle: instagram.handle }}
       />
       <CustomCursor />
       <TerminalApp views={views} />
