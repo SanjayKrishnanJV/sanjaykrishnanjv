@@ -83,14 +83,8 @@
   animation: term-fade 0.4s var(--ease-out-expo) both;
 }
 
-@keyframes term-print-word {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .redesign .print-word {
   opacity: 0;
-  animation: term-print-word 1ms steps(1) forwards;
 }
 
 @keyframes hud-spin {
