@@ -19,6 +19,13 @@ interface Project {
   stack: string[];
 }
 
+interface CaseStudyEntry {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+}
+
 interface Credential {
   name: string;
   organization: string;
@@ -47,6 +54,7 @@ interface SEOContentProps {
   careerEntries: CareerEntry[];
   skills: SkillGroup[];
   projects: Project[];
+  caseStudies?: CaseStudyEntry[];
   credentials: Credential[];
   posts: Post[];
   email: string;
@@ -77,6 +85,7 @@ export function SEOContent({
   careerEntries,
   skills,
   projects,
+  caseStudies,
   credentials,
   posts,
   email,
@@ -140,6 +149,19 @@ export function SEOContent({
           ))}
         </ul>
       </section>
+
+      {caseStudies && caseStudies.length > 0 && (
+        <section>
+          <h2>Case Studies</h2>
+          <ul>
+            {caseStudies.map((study) => (
+              <li key={study.id}>
+                <a href={`/case-studies/${study.id}`}>{study.name}</a> — {study.tagline} {study.description}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {(linkedinPosts?.length || newsletter || instagram) && (
         <section>

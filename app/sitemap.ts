@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
-import { getAllCaseStudies } from '@/lib/case-studies';
+import { caseStudies } from '@/content/case-studies';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.sanjaykrishnanjv.com';
@@ -15,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Get all case studies for dynamic sitemap entries
-  const caseStudies = getAllCaseStudies();
   const caseStudyEntries: MetadataRoute.Sitemap = caseStudies.map((study) => ({
     url: `${baseUrl}/case-studies/${study.id}`,
     lastModified: new Date(),

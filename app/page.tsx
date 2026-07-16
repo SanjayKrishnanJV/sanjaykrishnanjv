@@ -13,8 +13,10 @@ import { ProjectsExhibit } from '@/components/redesign/projects/ProjectsExhibit'
 import { SystemsReadout } from '@/components/redesign/systems/SystemsReadout';
 import { CredentialsIndex } from '@/components/redesign/credentials/CredentialsIndex';
 import { SocialFeed } from '@/components/redesign/social/SocialFeed';
+import { CasesIndex } from '@/components/redesign/cases/CasesIndex';
 import { Dispatches } from '@/components/redesign/dispatches/Dispatches';
 import { linkedinPosts, newsletter, instagram } from '@/content/social';
+import { caseStudies } from '@/content/case-studies';
 
 function dedupe(items: string[]) {
   return Array.from(new Set(items.map((i) => (i === 'Microsoft Azure' ? 'Azure' : i))));
@@ -90,6 +92,11 @@ export default function Home() {
       id: 'work',
       label: 'work/',
       element: <ProjectsExhibit items={work} />,
+    },
+    {
+      id: 'cases',
+      label: 'cases/',
+      element: <CasesIndex items={caseStudies} />,
     },
     {
       id: 'systems',
@@ -179,6 +186,12 @@ export default function Home() {
           name: c.name,
           organization: c.organization,
           issueDate: c.issueDate,
+        }))}
+        caseStudies={caseStudies.map((s) => ({
+          id: s.id,
+          name: s.name,
+          tagline: s.tagline,
+          description: s.description,
         }))}
         posts={posts.map((p) => ({ slug: p.slug, title: p.title, description: p.description }))}
         email={personal.email}
