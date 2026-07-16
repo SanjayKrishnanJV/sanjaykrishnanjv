@@ -1,6 +1,7 @@
 'use client';
 
 import { useLayoutEffect, useRef } from 'react';
+import Link from 'next/link';
 import { gsap } from '@/lib/motion/gsap';
 import { revealOnScroll } from '@/lib/motion/scrollReveal';
 import { TypeLine } from '@/components/redesign/terminal/TypeLine';
@@ -81,6 +82,15 @@ export function SystemsReadout({ repos, stars, followers, memberSince, languages
           ))}
         </div>
       </div>
+
+      <Link
+        href="/projects-stats"
+        data-cursor="view"
+        data-cursor-text="Open ↗"
+        className="mt-8 inline-block font-mono text-xs text-text-faint transition-colors hover:text-accent"
+      >
+        $ cat systems.stat --repos
+      </Link>
     </section>
   );
 }

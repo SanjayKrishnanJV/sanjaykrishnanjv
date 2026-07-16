@@ -1,36 +1,36 @@
-import ProjectStatsDashboard from '@/components/github/ProjectStatsDashboard';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { getGitHubData } from '@/lib/data';
+import { PageShell } from '@/components/redesign/layout/PageShell';
+import { RepoStatsIndex } from '@/components/redesign/systems/RepoStatsIndex';
 
 export const metadata = {
-  title: 'Project Statistics - Sanjay Krishnan JV',
-  description: 'Live GitHub repository statistics and analytics',
+  title: 'Repository Stats — Sanjay Krishnan JV',
+  description: 'Public GitHub repository statistics — stars, forks, languages, and activity.',
 };
 
 export default function ProjectStatsPage() {
-  return (
-    <main className="min-h-screen pt-20 pb-20">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors mb-6"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Portfolio
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Project <span className="gradient-text">Statistics</span>
-          </h1>
-          <p className="text-lg text-dark-600">
-            Live GitHub repository analytics and insights
-          </p>
-        </div>
+  const github = getGitHubData();
 
-        {/* Dashboard */}
-        <ProjectStatsDashboard />
+  return (
+    <PageShell breadcrumb="~/systems/repos">
+      <div className="font-mono text-sm text-text-faint">
+        <span className="text-accent">$</span> curl -s api.github.com/repos
       </div>
-    </main>
+      <h1 className="mt-4 font-mono text-3xl font-bold text-text md:text-4xl">
+        Public repository stats.
+      </h1>
+      <p className="mt-3 max-w-xl font-sans text-sm text-text-soft">
+        Synced daily from GitHub — stars, forks, and languages across public, non-fork
+        repositories. Private repos (client and studio work) aren&apos;t part of this count.
+      </p>
+
+      <div className="mt-10">
+        <RepoStatsIndex
+          repos={github.repositories}
+          totalStars={github.stats.totalStars}
+          totalForks={github.stats.totalForks}
+          languages={github.stats.languages}
+        />
+      </div>
+    </PageShell>
   );
 }
