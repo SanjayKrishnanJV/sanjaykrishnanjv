@@ -6,7 +6,7 @@
     "bio": null,
     "company": null,
     "location": "Bangalore",
-    "email": "sanjaykrishnanjv@gmail.com",
+    "email": null,
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
     "publicRepos": 4,
@@ -27,9 +27,9 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
-      "updatedAt": "2026-08-09T01:16:43Z",
-      "pushedAt": "2026-08-09T01:22:53Z",
-      "size": 1096,
+      "updatedAt": "2026-08-10T01:18:04Z",
+      "pushedAt": "2026-08-10T01:17:55Z",
+      "size": 1109,
       "openIssues": 1
     },
     {
@@ -151,5 +151,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-08-09T02:15:55.342Z"
+  "lastUpdated": "2026-08-10T01:18:28.274Z"
 }
