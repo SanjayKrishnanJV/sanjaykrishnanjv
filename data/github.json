@@ -6,7 +6,7 @@
     "bio": null,
     "company": null,
     "location": "Bangalore",
-    "email": null,
+    "email": "sanjaykrishnanjv@gmail.com",
     "website": "https://www.sanjaykrishnanjv.com/",
     "twitter": null,
     "publicRepos": 4,
@@ -28,8 +28,8 @@
       "topics": [],
       "createdAt": "2026-03-06T11:32:19Z",
       "updatedAt": "2026-11-12T06:26:53Z",
-      "pushedAt": "2026-11-22T04:41:38Z",
-      "size": 1176,
+      "pushedAt": "2026-11-22T04:55:33Z",
+      "size": 1189,
       "openIssues": 1
     },
     {
@@ -151,5 +151,5 @@
       "longestStreak": 0
     }
   },
-  "lastUpdated": "2026-11-22T04:43:43.971Z"
+  "lastUpdated": "2026-11-22T06:19:28.256Z"
 }
